@@ -1,0 +1,70 @@
+! vim: set filetype=xdefaults :
+
+URxvt.perl-ext-common : default,keyboard-select,url-select,clipboard
+
+URxvt.keysym.M-x           : perl:keyboard-select:activate
+URxvt.keysym.M-u           : perl:url-select:select_next
+URxvt.keysym.M-c           : perl:clipboard:copy
+URxvt.keysym.M-v           : perl:clipboard:paste
+URxvt.keysym.M-s           : perl:keyboard-select:search
+URxvt.keysym.M-C-v         : perl:clipboard:paste_escaped
+URxvt.url-select.launcher  : chromium
+URxvt.url-select.autocopy  : true
+URxvt.url-select.underline : true
+
+URxvt.geometry: 60x35
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+URxvt.letterSpace : -1
+URxvt.termName    : rxvt-256color
+URxvt.iso14755    : false
+URxvt*depth: 32
+URxvt*buffered: true
+URxvt*transparent: true
+URxvt.urgentOnBell: true
+URxvt.saveLines   : 12000
+URxvt.scrollBar   : false
+URxvt.scrollstyle : rxvt
+
+!XFT
+Xft.lcdfilter : lcddefault
+Xft.hintstyle : hintslight
+Xft.hinting   : true
+Xft.antialias : true
+Xft.rgba      : rgb
+
+
+!Solarized + tangerine + random colours
+URxvt.cursorColor : #FFF9EC
+URxvt.background : #000000
+*foreground: #000000
+URxvt.foreground : #FFFFFF
+
+URxvt.colorBD : #FFFFFF
+URxvt.colorUL : #CCCC66
+
+!black
+   *color0: #2E1F1F
+   *color8: #422D2D
+!red
+   *color1: #EB1717
+   *color9: #F53131
+!green
+   *color2: #3AC43E
+   *color10: #18FF56
+!yellow
+   *color3: #D5FF00
+   *color11: #F7EF72
+!blue
+   *color4: #004DFF
+   *color12: #8194BF
+!magenta
+   *color5: #FF00FF
+   *color13: #DB90FF
+!cyan
+   *color6: #5AF6F1
+   *color14: #669997
+!white
+   *color7: #FFFFFF
+   *color15: #FFFFFF
+

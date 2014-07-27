@@ -1,9 +1,0 @@
-#!/bin/bash
-    sudo yaourt -Syy
-    upd=$(yaourt -Qua)
-    num=$(yaourt -Qua | wc -l)
-    if ! [ $num -eq 0 ]; then
-        i3-nagbar -m 'Updates available ($num)' '$upd'
-    fi
-    sleep 600
-done

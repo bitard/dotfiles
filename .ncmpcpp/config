@@ -1,0 +1,52 @@
+## System
+mpd_host = 				localhost
+mpd_music_dir = 		"~/Music"
+mpd_port = 				6600
+mpd_crossfade_time = 	"5"
+ncmpcpp_directory = 	"~/.ncmpcpp"
+lyrics_directory = 		"~/.ncmpcpp/lyrics"
+
+## Colors
+# 0 - default window color (discards all other colors)
+# 1 - black
+# 2 - red
+# 3 - green
+# 4 - yellow
+# 5 - blue
+# 6 - magenta
+# 7 - cyan
+# 8 - white
+# 9 - end of current color
+color1 = 						"white"
+color2 = 						"white"
+main_window_color =				"white"
+main_window_highlight_color =	"white"
+empty_tag_color =				"red"
+state_line_color =				"red"
+progressbar_color =				"white"
+active_column_color =			"yellow"
+state_flags_color =				"white"
+volume_color = 					"black"
+active_window_border = 			"black"
+
+## Interface
+playlist_display_mode = "columns"
+song_columns_list_format = "(25)[white]{a} (73)[yellow]{t|f} (5)[black]{l}"
+song_status_format = "$4%t$9 $8by %a$9"
+display_bitrate = "no"
+display_remaining_time = "yes"
+now_playing_prefix = "$b"
+now_playing_suffix = "$/b"
+statusbar_visibility = "yes"
+header_visibility = "no"
+titles_visibility = "no"
+jump_to_now_playing_song_at_start = "yes"
+progressbar_look =                  "──-"
+playlist_disable_highlight_delay =	"1"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+fancy_scrolling = "yes"
+cyclic_scrolling = "yes"
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "no"
+lines_scrolled = "1"

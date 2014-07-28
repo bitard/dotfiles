@@ -18,7 +18,8 @@ URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=tr
 URxvt.letterSpace : -1
 URxvt.termName    : rxvt-256color
 URxvt.iso14755    : false
-URxvt*depth: 32
+URxvt*.shading: 20
+URxvt*depth: 35
 URxvt*buffered: true
 URxvt*transparent: true
 URxvt.urgentOnBell: true

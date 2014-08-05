@@ -10,15 +10,19 @@ override_utf8_locale no
 
 TEXT
 [
+ { "full_text" : "VOLUME:" , "color" : "\#9fbc00" } ,
+ { "full_text" : "${execi 1 amixer sget PCM,0 | egrep -o '([0-9]+%|\[(on|off)\])' | sed ':a;N;$!ba;s/\n/ /g' | awk '{print $1}'}" } ,
+ { "full_text" : "UPDATES AVAILABLE:" , "color" : "\#EE82EE" } ,
+ { "full_text" : "${execpi 3600 checkupdates | wc -l}" } ,
  { "full_text" : "KERNEL:" , "color" : "\#9fbc00" } ,
  { "full_text" : "${kernel}" } ,
- { "full_text" : "UPTIME:" , "color" : "\#9fbc00" } ,
- { "full_text" : "${uptime_short}" },
- { "full_text" : "NET:" , "color" : "\#9fbc00" } ,
- { "full_text" : "DOWN:${downspeed enp0s4}" },
- { "full_text" : "UP:${upspeed enp0s4}" },
- { "full_text" : "DATE:" , "color" : "\#9fbc00" } ,
+ { "full_text" : "UPTIME:" , "color" : "\#48D1CC" } ,
+ { "full_text" : "${uptime_short}" , "color" : "\#48D1CC" } , 
+ { "full_text" : "NET:" , "color" : "\#F4A460" } ,
+ { "full_text" : "DOWN:${downspeed enp0s4}" , "color" : "\#FF1493" } ,
+ { "full_text" : "UP:${upspeed enp0s4}" , "color" : "\#9fbc00" } ,
+ { "full_text" : "DATE:" , "color" : "\#DEB887" } ,
  { "full_text" : "${time %d/%m/%Y}" } ,
- { "full_text" : "TIME:" , "color" : "\#9fbc00" } ,
+ { "full_text" : "TIME:" , "color" : "\#90EE90" } ,
  { "full_text" : "${time %H:%M:%S}" }] ,
 

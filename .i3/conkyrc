@@ -10,11 +10,12 @@ override_utf8_locale no
 
 TEXT
 
-[{ "full_text" : "Music:" , "color" : "\#9fbc00" } ,
- { "full_text" : "${if_mpd_playing}${mpd_smart 50} ${mpd_elapsed}/${mpd_length}${else}${mpd_status}${endif}" } ,  
- { "full_text" : "FS:" , "color" : "\#9fbc00" } ,
- { "full_text" : " / : ${fs_free /}/${fs_size /}" } ,
- { "full_text" : "CPU:" , "color" : "\#9fbc00" } ,
- { "full_text" : "${cpu cpu0}%" }, 
+[{ "full_text" : "Music:" , "color" : "\#9400D3" } ,
+ { "full_text" : "${if_mpd_playing}${mpd_smart 50} ${mpd_elapsed}/${mpd_length}${else}${mpd_status}${endif}" , "color" : "\#C71585" } ,
+ { "full_text" : "FS:" , "color" : "\#5F63D7" } ,
+ { "full_text" : " / : ${fs_used /}/${fs_size /}" , "color" : "\#1E90FF" } ,
+ { "full_text" : "CPU:" , "color" : "\#FF1493" } ,
+ { "full_text" : "${cpu cpu0}%" , "color" : "\#FF1493" } ,
  { "full_text" : "RAM:" , "color" : "\#9fbc00" } ,
- { "full_text" : "${mem}" },
+ { "full_text" : "${mem}" , "color" : "\#9fbc00"},
+

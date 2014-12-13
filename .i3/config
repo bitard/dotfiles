@@ -3,7 +3,7 @@
 # font
 #########
 
-font pango:Arial 11px
+font xft:anorexia 11px
 
 ##########
 # windows
@@ -12,6 +12,7 @@ font pango:Arial 11px
 ##########
 # borders
 ##########
+
 new_window pixel 2
 new_float pixel 2
 hide_edge_borders vertical
@@ -21,11 +22,14 @@ bindsym $mod+b border 2pixel
 
 # Start terminal with some software..:
 exec --no-startup-id urxvt 
-exec --no-startup-id urxvt -geometry 60x10 -e ncmpcpp
+# exec --no-startup-id urxvt -geometry 60x10 -e ncmpcpp
+
 ##########
-# Other programs
+# other 
+##########
+
 exec chromium
-##########
+exec mpd
 
 ##########
 # Colors
@@ -43,9 +47,10 @@ set $pink #FF99CC
 set $grey #A0A0A0
 set $yellow #FFFF33
 
-# class                          border   backgr.   text
-## BLUE ACTIVE BORDER
-client.focused                   #3333FF #3333FF  #111111
+# class
+#                                 border   backgr.   text
+## ACTIVE BORDER
+client.focused                   #8642B3 #8642B3  #111111
 client.unfocused                 #444444 #444444  #315858
 client.focused_inactive          #444444 #444444  #2c2c2f
 client.urgent                    #383a3b #383a3b  #ee0000
@@ -64,14 +69,17 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvtc || lxterminal || xterm || terminator
-# kill focused window 
+# kill focused window
 bindsym $mod+Shift+c kill
 
 # Start htop (tool for watching system info)
 bindsym $mod+t exec urxvt -geometry 80x30 -e htop
 
+# Start ncmpcpp and 
+bindsym $mod+p  exec urxvt -geometry 60x10 -e ncmpcpp
+
 # start a program launcher:
-bindsym $mod+w  exec --no-startup-id dmenu_run -b  -fn 'pango:Arial 11px' -nb '#111111' -nf '#555555' -sb '#111111' -sf '#aadb0f'
+bindsym $mod+w  exec --no-startup-id dmenu_run -b  -fn 'xft:snap 11px' -nb '#111111' -nf '#555555' -sb '#111111' -sf '#9E5CCA'
 
 # Update system
 
@@ -129,11 +137,12 @@ bindsym $mod+Shift+space floating toggle
 # multimedia keys
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioRaiseVolume exec amixer -c 0 set PCM 4+
-bindsym XF86AudioLowerVolume exec amixer -c 0 set PCM 4-
-bindsym XF86AudioMute exec amixer sset PCM toggle
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 4+
+bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 4-
+bindsym XF86AudioMute exec amixer sset Master toggle
 bindsym XF86Tools exec mpc toggle
-bindsym XF86Calculator exec gnome-calculator 
+bindsym XF86Calculator exec gnome-calculator
+ 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -144,15 +153,15 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspaces
-bindsym $mod+1 workspace 1: terms
-bindsym $mod+2 workspace 2: web
-bindsym $mod+3 workspace 3: misc
+bindsym $mod+1 workspace  1
+bindsym $mod+2 workspace  2
+bindsym $mod+3 workspace  3
 
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1: terms
-bindsym $mod+Shift+2 move container to workspace 2: web
-bindsym $mod+Shift+3 move container to workspace 3: misc
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
 
 # reload the configuration file
 bindsym $mod+Shift+z reload
@@ -204,40 +213,41 @@ bar {
    status_command ~/.i3/conky
    tray_output none
    colors {
-	statusline	#DEDEDE
-	background	#2D2D2D
+	statusline	#9E5CCA
+	background	#414141
      # class               border  backgrd text
-        focused_workspace  #292929 #5F63D7 #DEDEDE
+        focused_workspace  #CC99FF #808080 #DEDEDE
         active_workspace   #2D2D2D #252525 #DEDEDE
-        inactive_workspace #2D2D2D #2D2D2D #6b6b6b
-        urgent_workspace   #252525 #252525 #FF00FF
+        inactive_workspace #414141 #414141 #6b6b6b
+        urgent_workspace   #252525 #252525 #7FA3B7
      }
 }
 
 # Bottom bar:
-bar {
-        mode dock
-        position bottom
-   workspace_buttons no
-   status_command ~/.i3/conky-down
-   tray_output none
-   colors {
-	statusline	#5F63D7
-	background	#2D2D2D
-        }
-}
+#bar {
+#        mode dock
+#        position bottom
+#   workspace_buttons no
+#   status_command ~/.i3/conky-down
+#   tray_output none
+#   colors {
+#	statusline	#C6E9EB
+#	background	#2D2D2D
+#       }
+#}
 
 #### RULES FOR SPECIFIC APPLICATIONS ####
 # Assign applications to workspaces
-
-assign [class="Chromium"] → 2: web
-assign [class="Opera"] → 2: web
-assign [class="^URxvt$" instance="^ncmpcpp$"] → 1: terms
-assign [class="URxvt"] → 1: terms
-assign [class="Gimp"] → 3: misc
-assign [class="Virtualbox"] → 3: misc
-assign [class="Libreoffice"] → 3: misc
-assign [class="Uzbl-tabbed"] → 2: web
+assign [class="Firefox"] → 2
+assign [class="Firefox-bin"] → 2
+assign [class="Chromium"] → 2
+assign [class="Opera"] → 2
+assign [class="^URxvt$" instance="^ncmpcpp$"] → 1
+assign [class="URxvt"] →  1
+assign [class="Gimp"] → 3 
+assign [class="Virtualbox"] → 3 
+assign [class="Libreoffice"] → 3 
+assign [class="Uzbl-tabbed"] → 2
 
 # Tip: To find out app class, might be run:
 #       xprop | grep -i 'class'

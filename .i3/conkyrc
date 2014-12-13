@@ -1,0 +1,29 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+# Update interval in seconds
+update_interval 1.0
+total_run_times 0
+override_utf8_locale no
+
+TEXT
+
+[
+ { "full_text" : "${execi 2 xset -q | gawk 'BEGIN { a[1]="RU"; a[0]="EN"} /LED/ { print a[substr($10,5,1)]; }'}" } ,
+ { "full_text" : "♫" , "color" : "\#66B2FF" } ,
+ { "full_text" : "${if_mpd_playing}${mpd_smart 50} ${mpd_elapsed}/${mpd_length}${else}${mpd_status}${endif}" , "color" : "\#9E5CCA" } ,
+ { "full_text" : "♪" , "color" : "\#66B2FF" } ,
+ { "full_text" : "${execi 1 amixer sget Master,0 | egrep -o '([0-9]+%|\[(on|off)\])' | sed ':a;N;$!ba;s/\n/ /g' | awk '{print $1}'}" , "color" : "\#66B2FF" } ,
+ { "full_text" : "☯" , "color" : "\#9E5CCA" } ,
+ { "full_text" : "${fs_used /}/${fs_size /}" , "color" : "\#66B2FF" } ,
+ { "full_text" : "CPU:" , "color" : "\#9E5CCA" } ,
+ { "full_text" : "${cpu cpu0}%" , "color" : "\#9E5CCA" },
+ { "full_text" : "≣" , "color" : "\#66B2FF" } ,
+ { "full_text" : "${memperc}%" , "color": "\#66B2FF"},
+ { "full_text" : "▼ ${downspeed enp0s4}" , "color" : "\#9E5CCA" } ,
+ { "full_text" : "▲ ${upspeed enp0s4}" , "color" : "\#66B2FF" } ,
+ { "full_text" : "${time %d/%m/%Y}" , "color" : "\#66B2FF" } ,
+ { "full_text" : "${time %H:%M}" , "color" : "\#66B2FF" }] , 
+

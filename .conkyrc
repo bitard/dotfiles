@@ -1,0 +1,56 @@
+background no
+font snap:bold:size=10
+use_xft yes
+xftalpha 0.9
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 180 5
+maximum_width 300
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color cccccc
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 30
+gap_y 1
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+uppercase no
+
+TEXT
+
+CPU: ${alignr}${freq} MHz
+Core 1 ${alignr}${cpu cpu1}%
+${cpubar 4 cpu1}
+Core 2 ${alignr}${cpu cpu2}%
+${cpubar 4 cpu2}
+
+${top name 1}$alignr${top cpu 1}
+${top name 2}$alignr${top cpu 2}
+
+RAM: ${alignr}$memmax
+
+Active: ${alignr}$mem ($memperc%)
+${membar 4}
+
+Filesystem
+
+Root: ${alignr}${fs_used /}/${fs_size /}
+Home: ${alignr}${fs_used /home}/${fs_size /home}
+
+Network: ${alignr}(${addr wlan0})
+
+Down: ${downspeed wlan0}/s ${alignr}(${totaldown wlan0})
+${downspeedgraph wlan0 000000 775555}
+Up: ${upspeed wlan0}/s ${alignr}(${totalup wlan0})
+${upspeedgraph wlan0 000000 557755}$color

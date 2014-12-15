@@ -5,7 +5,7 @@ xset -b
 xrdb -merge ~/.Xresources
 
 #background
-feh --bg-scale ~/Downloads/dark-girl.jpg
+feh --bg-scale /usr/share/wallpapers/dark-girl.jpg
 
 #trackball middle button emulation
 xinput set-prop "Primax Kensington Eagle Trackball" "Evdev Middle Button Emulation" 1

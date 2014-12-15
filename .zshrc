@@ -4,7 +4,7 @@ LC_CTYPE="ru_RU.UTF-8"
 export LANG="ru_RU.UTF-8"
 LC_ALL=ru_RU.UTF-8
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gozilla"
+ZSH_THEME="candy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
